@@ -1,5 +1,5 @@
 {
-  "name": "smartops-manufacturing-&-delivery-dashboard",
+  "name": "smartops",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,10 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "react-router-dom": "^7.9.4",
+    "framer-motion": "^12.23.24",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.4",
-    "framer-motion": "^12.23.24"
+    "lucide-react": "^0.545.0",
+    "tailwind-merge": "^3.3.1",
+    "recharts": "^3.2.1",
+    "clsx": "^2.1.1",
+    "axios": "^1.12.2"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

@@ -1,68 +1,63 @@
-// Fix: Provide implementation for the RoleSelection page component.
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../App';
-import { UserRole } from '../types';
-import { FactoryIcon } from '../constants';
-import { motion } from 'framer-motion';
+import React, { useContext } from 'react';
+// FIX: Import 'Variants' type from framer-motion to correctly type animation variants.
+import { motion, type Variants } from 'framer-motion';
+import { User, Briefcase, UserCheck } from 'lucide-react';
+import { DataContext } from '../context/DataContext';
+import type { UserRole } from '../types';
+import NetworkBackground from '../components/NetworkBackground';
+import { GanttChartSquare } from 'lucide-react';
 
-const RoleSelection = () => {
-    const { setRole } = useAuth();
-    const navigate = useNavigate();
+const roles: { name: UserRole; icon: React.ElementType; description: string }[] = [
+  { name: 'Manager', icon: Briefcase, description: 'Full access to all data, analytics, and settings.' },
+  { name: 'Operator', icon: User, description: 'View stock, deliveries, and tracking information.' },
+  { name: 'Executive', icon: UserCheck, description: 'High-level dashboard and TV mode access.' },
+];
 
-    const handleRoleSelect = (role: UserRole) => {
-        setRole(role);
-        navigate('/login');
-    };
+const RoleSelection: React.FC = () => {
+  const { setRole } = useContext(DataContext);
 
-    const roles = [
-        { name: 'Manager', role: UserRole.Manager, description: 'Oversee operations and analytics.' },
-        { name: 'Admin', role: UserRole.Admin, description: 'Manage system settings and users.' },
-        { name: 'Driver', role: UserRole.Driver, description: 'View deliveries and routes.' }
-    ];
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    }),
+  };
 
-    return (
-        <div className="min-h-screen bg-light-bg dark:bg-dark-bg flex items-center justify-center p-4">
-            <div className="max-w-4xl w-full text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex justify-center items-center gap-3 mb-6"
-                >
-                    <FactoryIcon className="h-12 w-12 text-siemens-teal" />
-                    <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-siemens-teal to-zoho-blue">
-                        Welcome to SmartOps
-                    </h1>
-                </motion.div>
-                <motion.p 
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-xl text-gray-600 dark:text-gray-300 mb-12"
-                >
-                    Please select your role to continue
-                </motion.p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {roles.map((roleInfo, index) => (
-                        <motion.div
-                            key={roleInfo.name}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                            whileHover={{ y: -5, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}
-                            className="bg-light-card dark:bg-dark-card rounded-xl p-8 cursor-pointer shadow-lg border border-gray-200 dark:border-gray-700"
-                            onClick={() => handleRoleSelect(roleInfo.role)}
-                        >
-                            <h2 className="text-2xl font-semibold mb-2 text-light-text dark:text-dark-text">{roleInfo.name}</h2>
-                            <p className="text-gray-500 dark:text-gray-400">{roleInfo.description}</p>
-                        </motion.div>
-                    ))}
-                </div>
+  return (
+    <NetworkBackground className="min-h-screen flex flex-col items-center justify-center p-4">
+       <div className="text-center mb-12">
+            <div className="flex justify-center items-center mb-4">
+                <GanttChartSquare className="h-12 w-12 text-blue-500" />
+                <h1 className="text-5xl font-bold ml-3 text-black">SmartOps</h1>
             </div>
+            <p className="text-xl text-gray-800">Select your role to begin</p>
         </div>
-    );
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
+        {roles.map((role, i) => (
+          <motion.div
+            key={role.name}
+            custom={i}
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover={{ scale: 1.05, y: -10 }}
+            onClick={() => setRole(role.name)}
+            className="cursor-pointer bg-white/60 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-200 text-center transition-all"
+          >
+            <role.icon className="h-16 w-16 mx-auto text-blue-500 mb-4" />
+            <h2 className="text-2xl font-semibold mb-2 text-black">{role.name}</h2>
+            <p className="text-gray-800">{role.description}</p>
+          </motion.div>
+        ))}
+      </div>
+    </NetworkBackground>
+  );
 };
 
 export default RoleSelection;

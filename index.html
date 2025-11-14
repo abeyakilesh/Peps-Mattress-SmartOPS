@@ -1,12 +1,31 @@
-<script type="importmap">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartOps Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
 {
   "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.545.0",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.3.1",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "axios": "https://aistudiocdn.com/axios@^1.12.2"
   }
 }
 </script>
-full contents of index.html
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
