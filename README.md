@@ -1,12 +1,12 @@
-# SmartOps
-## Smart Operations Management System
+## SmartOps – Smart Operations Management System
 
----
+SmartOps is a web-based operations management platform built to streamline workflow handling, manage application data, and provide a scalable backend architecture.
 
-## Overview
-SmartOps is a web-based operations management system designed to simplify and automate routine operational tasks. It provides a structured backend, clean frontend, and secure API-based communication to manage users, data, and workflows efficiently.
-
-This project focuses on scalability, clean architecture, and real-world development practices.
+This project was developed during a hackathon to demonstrate:
+- Full-stack development skills
+- REST API design
+- Modular project structure
+- Deployment-ready architecture
 
 ---
 
@@ -15,7 +15,7 @@ This project focuses on scalability, clean architecture, and real-world developm
 ### Frontend
 - HTML
 - CSS
-- JavaScript
+- TypeScript
 - React
 
 ### Backend
@@ -59,13 +59,14 @@ SmartOps/
 └── README.md
 ```
 
-## Features
-- User authentication and authorization  
-- RESTful API architecture  
-- CRUD operations  
-- Secure backend handling  
-- Modular project structure  
-- Scalable design  
+## Key Features
+- User authentication and authorization
+- RESTful API architecture
+- Modular backend structure
+- Clean frontend architecture
+- Environment-based configuration
+- Deployed production build
+ 
 
 ---
 
@@ -127,6 +128,10 @@ npm start
 - Performance optimization  
 
 ---
+
+## Note
+This project was built during a hackathon and focuses on demonstrating system design, clean structure, and rapid development.
+
 
 ## Author
 **Abey Akilesh M**  
