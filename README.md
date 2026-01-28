@@ -10,6 +10,17 @@ This project was developed during a hackathon to demonstrate:
 
 ---
 
+## Image
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/4c4a8edc-a6a5-4042-8474-a038b357de4f" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/bae206b9-47e8-46e1-85da-ff0b4e6409a5" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/69375248-8c69-4753-bd61-d5b10134e94f" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d8d07aa7-0070-4c97-8114-3bc71d2dd178" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/05196ab0-5cd5-4cba-b93b-41a4c43e10f8" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/5175f4e9-dae8-4d4b-a014-5d705e504988" />
+
+---
+
 ## Tech Stack
 
 ### Frontend
