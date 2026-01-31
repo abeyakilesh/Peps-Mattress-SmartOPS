@@ -146,4 +146,4 @@ This project was built during a hackathon and focuses on demonstrating system de
 
 ## Author
 **Abey Akilesh M**  
-Engineering Student | Full Stack Developer
+Engineering Student | Full Stack Developer 
