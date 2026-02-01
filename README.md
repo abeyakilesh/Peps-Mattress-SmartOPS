@@ -141,7 +141,7 @@ npm start
 ---
 
 ## Note
-This project was built during a hackathon and focuses on demonstrating system design, clean structure, and rapid development.
+This project was built during a hackathon and focuses on demonstrating system design, clean structure, and rapid development. 
 
 
 ## Author
