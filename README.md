@@ -1,4 +1,4 @@
-## SmartOps – Smart Operations Management System
+## Peps-Matress SmartOps
 
 SmartOps is a web-based operations management platform built to streamline workflow handling, manage application data, and provide a scalable backend architecture.
 
