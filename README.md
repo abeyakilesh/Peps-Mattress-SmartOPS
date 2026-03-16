@@ -21,7 +21,7 @@ This project was developed during a hackathon to demonstrate:
 
 ---
 
-## Tech Stack
+## Tech Stack 
 
 ### Frontend
 - HTML
