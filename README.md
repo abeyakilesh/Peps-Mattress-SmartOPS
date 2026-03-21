@@ -2,12 +2,6 @@
 
 SmartOps is a web-based operations management platform built to streamline workflow handling, manage application data, and provide a scalable backend architecture.
 
-This project was developed during a hackathon to demonstrate:
-- Full-stack development skills
-- REST API design
-- Modular project structure
-- Deployment-ready architecture
-
 ---
 
 ## Image
